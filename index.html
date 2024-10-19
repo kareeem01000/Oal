@@ -41,7 +41,7 @@
             margin: 0 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -141,6 +141,8 @@
         <a href="#" onclick="showContent('blog')">المدونة ✍️</a>
         <a href="#" onclick="showContent('testimonials')">آراء الطلاب 🌟</a>
         <a href="#" onclick="showContent('contact')">اتصل بنا 📞</a>
+        <a href="#" onclick="showContent('resources')">الموارد 📖</a>
+        <a href="#" onclick="showContent('success-stories')">قصص النجاح 🏆</a>
     </nav>
 
     <div class="container">
@@ -179,6 +181,25 @@
                 <p>“أفضل تجربة تعليمية! أنصح الجميع بالانضمام.” • محمد 👏</p>
             </div>
         </div>
+        <div class="content" id="resources">
+            <h2>الموارد الإضافية</h2>
+            <p>هنا بعض الموارد التي قد تهمك:</p>
+            <ul>
+                <li><a href="#" style="color: #0d47a1;">دليل المبتدئين في البرمجة (PDF)</a></li>
+                <li><a href="#" style="color: #0d47a1;">كتاب التصميم الجرافيكي (PDF)</a></li>
+                <li><a href="#" style="color: #0d47a1;">استراتيجيات التسويق الإلكتروني (PDF)</a></li>
+            </ul>
+        </div>
+        <div class="content" id="success-stories">
+            <h2>قصص النجاح</h2>
+            <p>استمتع بمشاهدة قصص نجاح طلابنا:</p>
+            <div class="testimonial">
+                <p>“بعد التحاقي بدورة البرمجة، حصلت على وظيفة في شركة تقنية مرموقة.” • ليلى 🏆</p>
+            </div>
+            <div class="testimonial">
+                <p>“دورة التصميم ساعدتني في فتح مشروعي الخاص في مجال الدعاية والإعلان.” • سامي 🎉</p>
+            </div>
+        </div>
         <div class="content" id="contact">
             <h2>اتصل بنا</h2>
             <p>لأي استفسارات، الرجاء التواصل معنا عبر البريد الإلكتروني <a href="mailto:info@wadiacademy.com">info@wadiacademy.com</a> أو عبر الهاتف: 
@@ -193,7 +214,7 @@
 
     <script>
         function showContent(section) {
-            const sections = ['home', 'courses', 'about', 'blog', 'testimonials', 'contact'];
+            const sections = ['home', 'courses', 'about', 'blog', 'testimonials', 'contact', 'resources', 'success-stories'];
             sections.forEach(sec => {
                 const element = document.getElementById(sec);
                 element.classList.remove('active');

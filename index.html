@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,157 +10,218 @@
     <meta name="keywords" content="أكاديمية, تدريب, تطوير, تعليم, علا عبدالهادي, دورات">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            transition: background-color 0.5s;
+            background: linear-gradient(to right, #e3f2fd, #bbdefb);
+            color: #333;
         }
+
         header {
-            background-color: #4CAF50;
+            background-color: #0d47a1;
             color: white;
             text-align: center;
-            padding: 1em 0;
-            transition: background-color 0.5s;
+            padding: 2em 0;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
+
         nav {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: #1976d2;
+            padding: 1em 0;
         }
+
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            margin: 0 10px;
+            border-radius: 5px;
             transition: background-color 0.3s;
-            position: relative;
         }
+
         nav a:hover {
-            background-color: #575757;
+            background-color: #1565c0;
         }
-        nav a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: white;
-            transition: width 0.3s;
-            position: absolute;
-            left: 50%;
-            bottom: -5px;
-            transition: left 0.3s, width 0.3s;
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
         }
-        nav a:hover::after {
-            width: 100%;
-            left: 0;
-        }
+
         .content {
             padding: 20px;
             text-align: center;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s;
-            margin-top: 20px;
+            display: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin: 20px 0;
+            transition: all 0.3s;
         }
+
         .content.active {
-            opacity: 1;
-            transform: translateY(0);
+            display: block;
         }
+
         footer {
-            background-color: #333;
+            background-color: #0d47a1;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
+            padding: 1em 0;
+            position: relative;
             bottom: 0;
             width: 100%;
-            transition: background-color 0.5s;
         }
-        .hidden {
-            display: none;
-        }
+
         .courses-list {
             list-style-type: none;
             padding: 0;
         }
+
         .courses-list li {
-            background: #4CAF50;
+            background: #42a5f5;
             color: white;
             margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             transition: transform 0.3s;
+            cursor: pointer;
         }
+
         .courses-list li:hover {
             transform: scale(1.05);
         }
+
+        .testimonial {
+            background: #e1f5fe;
+            border-left: 6px solid #039be5;
+            margin: 20px auto;
+            padding: 15px;
+            width: 80%;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-entry {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-link {
+            color: #0d47a1;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>أكاديمية الوادي الجديد للتدريب والتطوير 🎓</h1>
-    <p>بقيادة علا عبدالهادي 🌟</p>
-</header>
+    <header>
+        <h1>أكاديمية الوادي الجديد للتدريب والتطوير 🎓</h1>
+        <p>بقيادة علا عبدالهادي 🌟</p>
+    </header>
 
-<nav>
-    <a href="#" onclick="showContent('home')">الرئيسية 🏠</a>
-    <a href="#" onclick="showContent('courses')">الدورات 📚</a>
-    <a href="#" onclick="showContent('about')">عن الأكاديمية 🏫</a>
-    <a href="#" onclick="showContent('blog')">المدونة ✍️</a>
-    <a href="#" onclick="showContent('contact')">اتصل بنا 📞</a>
-</nav>
+    <nav>
+        <a href="#" onclick="showContent('home')">الرئيسية 🏠</a>
+        <a href="#" onclick="showContent('courses')">الدورات 📚</a>
+        <a href="#" onclick="showContent('about')">عن الأكاديمية 🏫</a>
+        <a href="#" onclick="showContent('blog')">المدونة ✍️</a>
+        <a href="#" onclick="showContent('testimonials')">آراء الطلاب 🌟</a>
+        <a href="#" onclick="showContent('contact')">اتصل بنا 📞</a>
+    </nav>
 
-<div class="content" id="home">
-    <h2>الرئيسية</h2>
-    <p>أهلاً وسهلاً بيكم في أكاديمية الوادي الجديد، هنا هتلاقوا أفضل المحتويات التدريبية والتطويرية 💪✨.</p>
-</div>
-<div class="content hidden" id="courses">
-    <h2>الدورات</h2>
-    <p>هنا هتلاقي مجموعة من الدورات المتميزة في مختلف المجالات 👩‍🏫👨‍🏫.</p>
-    <ul class="courses-list">
-        <li>دورة البرمجة 💻</li>
-        <li>دورة التصميم 🎨</li>
-        <li>دورة التسويق الإلكتروني 📈</li>
-    </ul>
-</div>
-<div class="content hidden" id="about">
-    <h2>عن الأكاديمية</h2>
-    <p>أكاديمية الوادي الجديد للتدريب والتطوير، بقيادة علا عبدالهادي، بتقدم محتوى تدريبي عالي الجودة للطلاب في جميع أنحاء العالم 🌍.</p>
-</div>
-<div class="content hidden" id="blog">
-    <h2>المدونة</h2>
-    <p>تابعوا آخر المقالات والأخبار التدريبية على مدونتنا 📰.</p>
-</div>
-<div class="content hidden" id="contact">
-    <h2>اتصل بنا</h2>
-    <p>لأي استفسارات، الرجاء التواصل معنا عبر البريد الإلكتروني <a href="mailto:info@wadiacademy.com">info@wadiacademy.com</a> أو عبر الهاتف: <strong>+20 1210171227</strong> 📲.</p>
-</div>
+    <div class="container">
+        <div class="content active" id="home">
+            <h2>الرئيسية</h2>
+            <p>أهلاً وسهلاً بيكم في أكاديمية الوادي الجديد، هنا هتلاقوا أفضل المحتويات التدريبية والتطويرية 💪✨.</p>
+        </div>
+        <div class="content" id="courses">
+            <h2>الدورات</h2>
+            <p>هنا هتلاقي مجموعة من الدورات المتميزة في مختلف المجالات 👩‍🏫👨‍🏫.</p>
+            <ul class="courses-list">
+                <li>دورة البرمجة 💻</li>
+                <li>دورة التصميم 🎨</li>
+                <li>دورة التسويق الإلكتروني 📈</li>
+            </ul>
+        </div>
+        <div class="content" id="about">
+            <h2>عن الأكاديمية</h2>
+            <p>أكاديمية الوادي الجديد للتدريب والتطوير، بقيادة علا عبدالهادي، بتقدم محتوى تدريبي عالي الجودة للطلاب في جميع أنحاء العالم 🌍.</p>
+        </div>
+        <div class="content" id="blog">
+            <h2>المدونة</h2>
+            <textarea id="blogInput" placeholder="اكتب تعليقك هنا..." rows="4" style="width: 80%;"></textarea><br>
+            <button onclick="addBlogEntry()">إضافة تعليق</button>
+            <div id="blogEntries" style="margin-top: 20px;"></div>
+        </div>
+        <div class="content" id="testimonials">
+            <h2>آراء الطلاب</h2>
+            <div class="testimonial">
+                <p>“أكاديمية الوادي الجديد غيرت حياتي! الدورات كانت مفيدة جدًا.” • أحمد 🥇</p>
+            </div>
+            <div class="testimonial">
+                <p>“تعلمت الكثير من المهارات الجديدة هنا، شكرًا لعلا والفريق!” • سارة 🌟</p>
+            </div>
+            <div class="testimonial">
+                <p>“أفضل تجربة تعليمية! أنصح الجميع بالانضمام.” • محمد 👏</p>
+            </div>
+        </div>
+        <div class="content" id="contact">
+            <h2>اتصل بنا</h2>
+            <p>لأي استفسارات، الرجاء التواصل معنا عبر البريد الإلكتروني <a href="mailto:info@wadiacademy.com">info@wadiacademy.com</a> أو عبر الهاتف: 
+                <strong><a href="https://wa.me/201210171227" class="contact-link">+20 1210171227</a></strong> 📲.
+            </p>
+        </div>
+    </div>
 
-<footer>
-    <p>جميع الحقوق محفوظة &copy; 2024 أكاديمية الوادي الجديد ✨</p>
-</footer>
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 أكاديمية الوادي الجديد ✨</p>
+    </footer>
 
-<script>
-    function showContent(section) {
-        const sections = ['home', 'courses', 'about', 'blog', 'contact'];
-        sections.forEach(sec => {
-            const element = document.getElementById(sec);
-            element.classList.add('hidden');
-            element.classList.remove('active');
-        });
-        const activeSection = document.getElementById(section);
-        activeSection.classList.remove('hidden');
-        setTimeout(() => {
+    <script>
+        function showContent(section) {
+            const sections = ['home', 'courses', 'about', 'blog', 'testimonials', 'contact'];
+            sections.forEach(sec => {
+                const element = document.getElementById(sec);
+                element.classList.remove('active');
+            });
+            const activeSection = document.getElementById(section);
             activeSection.classList.add('active');
-        }, 10);
-    }
+        }
 
-    // Show home section by default
-    showContent('home');
-</script>
+        function addBlogEntry() {
+            const blogInput = document.getElementById('blogInput');
+            const blogEntries = document.getElementById('blogEntries');
+
+            if (blogInput.value.trim() === "") {
+                alert("من فضلك، اكتب تعليقًا قبل الإضافة.");
+                return;
+            }
+
+            const newEntry = document.createElement('div');
+            newEntry.classList.add('blog-entry');
+            newEntry.textContent = blogInput.value;
+
+            blogEntries.appendChild(newEntry);
+            blogInput.value = ""; // Clear the input after adding
+        }
+
+        // Show home section by default
+        showContent('home');
+    </script>
 
 </body>
-</html>
 
+</html>

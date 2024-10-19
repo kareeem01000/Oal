@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية الوادي الجديد للتدريب والتطوير</title>
+    <meta name="description" content="أكاديمية الوادي الجديد للتدريب والتطوير تقدم دورات متميزة في مختلف المجالات.">
+    <meta name="keywords" content="أكاديمية, تدريب, تطوير, تعليم, علا عبدالهادي, دورات">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            transition: background-color 0.5s;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            transition: background-color 0.5s;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+            position: relative;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transition: left 0.3s, width 0.3s;
+        }
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s;
+            margin-top: 20px;
+        }
+        .content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.5s;
+        }
+        .hidden {
+            display: none;
+        }
+        .courses-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .courses-list li {
+            background: #4CAF50;
+            color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .courses-list li:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>أكاديمية الوادي الجديد للتدريب والتطوير 🎓</h1>
+    <p>بقيادة علا عبدالهادي 🌟</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showContent('home')">الرئيسية 🏠</a>
+    <a href="#" onclick="showContent('courses')">الدورات 📚</a>
+    <a href="#" onclick="showContent('about')">عن الأكاديمية 🏫</a>
+    <a href="#" onclick="showContent('blog')">المدونة ✍️</a>
+    <a href="#" onclick="showContent('contact')">اتصل بنا 📞</a>
+</nav>
+
+<div class="content" id="home">
+    <h2>الرئيسية</h2>
+    <p>أهلاً وسهلاً بيكم في أكاديمية الوادي الجديد، هنا هتلاقوا أفضل المحتويات التدريبية والتطويرية 💪✨.</p>
+</div>
+<div class="content hidden" id="courses">
+    <h2>الدورات</h2>
+    <p>هنا هتلاقي مجموعة من الدورات المتميزة في مختلف المجالات 👩‍🏫👨‍🏫.</p>
+    <ul class="courses-list">
+        <li>دورة البرمجة 💻</li>
+        <li>دورة التصميم 🎨</li>
+        <li>دورة التسويق الإلكتروني 📈</li>
+    </ul>
+</div>
+<div class="content hidden" id="about">
+    <h2>عن الأكاديمية</h2>
+    <p>أكاديمية الوادي الجديد للتدريب والتطوير، بقيادة علا عبدالهادي، بتقدم محتوى تدريبي عالي الجودة للطلاب في جميع أنحاء العالم 🌍.</p>
+</div>
+<div class="content hidden" id="blog">
+    <h2>المدونة</h2>
+    <p>تابعوا آخر المقالات والأخبار التدريبية على مدونتنا 📰.</p>
+</div>
+<div class="content hidden" id="contact">
+    <h2>اتصل بنا</h2>
+    <p>لأي استفسارات، الرجاء التواصل معنا عبر البريد الإلكتروني <a href="mailto:info@wadiacademy.com">info@wadiacademy.com</a> أو عبر الهاتف: <strong>+20 1210171227</strong> 📲.</p>
+</div>
+
+<footer>
+    <p>جميع الحقوق محفوظة &copy; 2024 أكاديمية الوادي الجديد ✨</p>
+</footer>
+
+<script>
+    function showContent(section) {
+        const sections = ['home', 'courses', 'about', 'blog', 'contact'];
+        sections.forEach(sec => {
+            const element = document.getElementById(sec);
+            element.classList.add('hidden');
+            element.classList.remove('active');
+        });
+        const activeSection = document.getElementById(section);
+        activeSection.classList.remove('hidden');
+        setTimeout(() => {
+            activeSection.classList.add('active');
+        }, 10);
+    }
+
+    // Show home section by default
+    showContent('home');
+</script>
+
+</body>
+</html>
+
